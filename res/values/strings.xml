@@ -1062,4 +1062,16 @@
     <string name="themes_tile_mods_notification_value" translatable="false">mods_notifications</string>
     <string name="themes_tile_mods_alarm_value" translatable="false">mods_alarms</string>
     <string name="themes_tile_mods_ringtone_value" translatable="false">mods_ringtones</string>
+
+    <string name="settings_reset_button">Reset</string>
+
+    <!-- Key backlight -->
+    <string name="button_backlight_title">Backlight</string>
+    <string name="button_backlight_enabled">Illuminate buttons</string>
+    <string name="button_backlight_seekbar_title">Button brightness</string>
+    <string name="backlight_timeout_title">Illumination timeout</string>
+    <string name="backlight_timeout_unlimited">Don\'t turn off</string>
+    <string name="backlight_summary_disabled">Disabled</string>
+    <string name="backlight_summary_enabled_with_timeout">Enabled for <xliff:g id="timeout">%s</xliff:g></string>
+    <string name="backlight_summary_enabled">Enabled</string>
 </resources>

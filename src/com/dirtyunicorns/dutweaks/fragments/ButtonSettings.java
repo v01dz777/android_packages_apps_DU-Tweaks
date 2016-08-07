@@ -43,6 +43,7 @@ import android.preference.SwitchPreference;
 import android.provider.Settings;
 
 import com.android.settings.R;
+import com.dirtyunicorns.dutweaks.ButtonBacklightBrightness;
 
 import com.android.internal.logging.MetricsLogger;
 import com.android.internal.utils.du.ActionConstants;
@@ -64,6 +65,7 @@ public class ButtonSettings extends ActionFragment implements OnPreferenceChange
     private static final String CATEGORY_APPSWITCH = "app_switch_key";
     private static final String CATEGORY_VOLUME = "volume_keys";
     private static final String CATEGORY_POWER = "power_key";
+    private static final String KEY_BUTTON_BACKLIGHT = "button_backlight";
 
     // Masks for checking presence of hardware keys.
     // Must match values in frameworks/base/core/res/res/values/config.xml
@@ -174,6 +176,12 @@ public class ButtonSettings extends ActionFragment implements OnPreferenceChange
 
         // load preferences first
         setActionPreferencesEnabled(keysDisabled == 0);
+
+        final ButtonBacklightBrightness backlight =
+                (ButtonBacklightBrightness) findPreference(KEY_BUTTON_BACKLIGHT);
+        if (!backlight.isButtonSupported()) {
+            prefScreen.removePreference(backlight);
+        }
     }
 
     @Override
