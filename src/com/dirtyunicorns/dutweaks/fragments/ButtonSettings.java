@@ -160,7 +160,7 @@ public class ButtonSettings extends ActionFragment implements OnPreferenceChange
             if (mButtonBrightness != null) {
                int ButtonBrightness = Settings.System.getInt(getContentResolver(),
                                Settings.System.BUTTON_BRIGHTNESS, 255);
-               mButtonBrightness.setValue(ButtonBrightness / 1);
+               mButtonBrightness.setValue((int)(ButtonBrightness / 2.55));
                mButtonBrightness.setOnPreferenceChangeListener(this);
             }
         } else {
@@ -244,7 +244,7 @@ public class ButtonSettings extends ActionFragment implements OnPreferenceChange
         } else if (preference == mButtonBrightness) {
             int value = (Integer) newValue;
               Settings.System.putInt(getActivity().getContentResolver(),
-                      Settings.System.BUTTON_BRIGHTNESS, value * 1);
+                      Settings.System.BUTTON_BRIGHTNESS, (int)(value * 2.55));
             return true;
         }
 
